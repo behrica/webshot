@@ -325,6 +325,7 @@ Casper.prototype.capture = function capture(targetFile, clipRect, imgOptions) {
     } else {
         this.log(f("Capturing page to %s", targetFile), "debug");
     }
+    this.page.settings.dpi = 300
     if (!this.page.render(this.filter('capture.target_filename', targetFile) || targetFile, imgOptions)) {
         this.log(f("Failed to save screenshot to %s; please check permissions", targetFile), "error");
     } else {
